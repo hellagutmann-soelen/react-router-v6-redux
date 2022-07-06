@@ -1,36 +1,36 @@
 import { LinearProgress } from '@mui/material';
 import React, { FunctionComponent, ReactNode, useEffect, PropsWithChildren, } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Authentication } from '../../redux/slices/app';
 import { AppDispatch, RootState } from '../../redux/store';
 import { push } from '@lagunovsky/redux-react-router';
-import { browserHistory } from '../history';
-import { IndexRouteProps } from 'react-router';
 
 interface Props {
-  // children: ReactNode,
-  // component: ReactNode,
-  // authentication: Authentication,
-  // onRedirect: ( to: string ) => void,
 }
 
 const ProtectedNavigation:FunctionComponent = ( props:PropsWithChildren<Props> ) => {
 
   const authentication = useSelector( (state:RootState) => state.app.authentication );
-  const state = useSelector( (state:RootState) => state );
 
   const dispatch = useDispatch<AppDispatch>()
   useEffect( () => {
-    dispatch( push( '/' ) );
 
   })
 
+  // With setTimeout: Everything works fine
+  // @@router/ON_LOCATION_CHANGED can be found in the inspector of redux devtools
+  // Settings will be redirected back to /
+
   setTimeout( () => {
 
-    if ( authentication === 'failed' ) {
-    }
+    // if ( authentication === 'failed' ) { }
+    dispatch( push( '/' ) );
   }, 1 );
-  // browserHistory.push( '/' )
+
+
+  // By commenting setTimeout and commenting out the snippet below:
+  // Redirect does not behave as supposed to
+
+  // dispatch( push( '/' ) );
 
   if( authentication === 'succeeded' ) return <div>props.children</div>;
 
