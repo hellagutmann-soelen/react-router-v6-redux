@@ -14,8 +14,9 @@ export function App() {
     <Provider store={store}>
       <ReduxRouter
         history={browserHistory}
-        store={store}
         children={<AppRoutes/>}
+        // store={store}
+        // enableTimeTravelling={true}
       />
     </Provider>
   )

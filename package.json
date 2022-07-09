@@ -7,7 +7,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.9.3",
 		"@emotion/styled": "^11.9.3",
-		"@lagunovsky/redux-react-router": "^3.2.0",
+		"@lagunovsky/redux-react-router": "^4.0.0-next.0",
 		"@mui/icons-material": "^5.8.4",
 		"@mui/lab": "^5.0.0-alpha.88",
 		"@mui/material": "^5.8.5",

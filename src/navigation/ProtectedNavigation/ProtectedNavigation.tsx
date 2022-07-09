@@ -23,14 +23,14 @@ const ProtectedNavigation:FunctionComponent = ( props:PropsWithChildren<Props> )
   setTimeout( () => {
 
     // if ( authentication === 'failed' ) { }
-    dispatch( push( '/' ) );
+    // dispatch( push( '/' ) );
   }, 1 );
 
 
   // By commenting setTimeout and commenting out the snippet below:
   // Redirect does not behave as supposed to
 
-  // dispatch( push( '/' ) );
+  dispatch( push( '/' ) );
 
   if( authentication === 'succeeded' ) return <div>props.children</div>;
 
