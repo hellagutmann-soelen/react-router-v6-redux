@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import ProtectedNavigation from './navigation/ProtectedNavigation/ProtectedNavigation';
+import ProtectedRoute from './compnoents/ProtectedRoute';
 import Settings from './pages/Settings/Settings';
 
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
@@ -21,9 +21,9 @@ export function AppRoutes(){
       } />
       <Route
         path="/settings"
-        element={  <ProtectedNavigation>
+        element={  <ProtectedRoute>
           <Settings />
-        </ProtectedNavigation> }
+        </ProtectedRoute> }
       />
     </Routes>
   )
